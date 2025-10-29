@@ -1,3 +1,4 @@
+/* ===== Global ===== */
 body {
     background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
     font-family: 'Poppins', sans-serif;
@@ -7,45 +8,94 @@ body {
     height: 100vh;
     margin: 0;
 }
+
+/* ===== Container ===== */
 .container {
     background-color: white;
-    padding: 30px 40px;
+    padding: 40px 50px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 350px;
+    width: 400px;
 }
+
+/* ===== Title ===== */
 h1 {
     color: #00796b;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 24px;
 }
+
+/* ===== Form ===== */
+.aqi-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Group two inputs per row */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Inputs styling */
 input {
+    flex: 1;
     margin: 8px 0;
     padding: 10px;
     border: 1px solid #b2dfdb;
     border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
 }
+
+input:focus {
+    border-color: #00796b;
+    box-shadow: 0 0 6px rgba(0, 121, 107, 0.4);
+}
+
+/* ===== Button ===== */
 button {
     background-color: #00796b;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 12px 0;
     border-radius: 8px;
     cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.3s;
 }
+
 button:hover {
     background-color: #004d40;
 }
+
+/* ===== Result box ===== */
 .result {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 25px;
+    padding: 15px;
     border-radius: 10px;
     color: white;
     font-weight: bold;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
+
+/* AQI Category Colors */
 .good { background-color: #4caf50; }
 .satisfactory { background-color: #cddc39; color: #333; }
 .moderate { background-color: #ff9800; }
 .poor { background-color: #ff5722; }
 .very-poor { background-color: #9c27b0; }
 .severe { background-color: #b71c1c; }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
