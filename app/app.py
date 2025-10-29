@@ -3,7 +3,8 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-model = pickle.load(open(r"C:\Users\91637\Downloads\aqi-mlops-ready\models\AQI_model.pkl", "rb"))
+import os
+model = pickle.load(open(os.path.join("models", "AQI_model.pkl"), "rb"))
 
 @app.route("/")
 def home():
